@@ -2,23 +2,47 @@
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.desafiolatam.weatherlatam.R
+import org.json.JSONObject
 
-class MainActivity : AppCompatActivity(), DetailFragment.CommunicationInterface {
+interface CommunicationInterface {
+    fun updateCityName(newCityName: String)
+}
 
+class MainActivity : AppCompatActivity(), CommunicationInterface {
+
+    private lateinit var detailFragment: DetailFragment
     private lateinit var mainFragment: MainFragment
-    private lateinit var detailFragment: DetailFragment<Any?>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainFragment = MainFragment()
         detailFragment = DetailFragment()
+        mainFragment = MainFragment()
 
-        // No necesitas establecer la interfaz de comunicación aquí
-        // detailFragment.setCommunicationInterface(this) // ya no es necesario
+        try {
+            val inputStream = assets.open("weather_data.json")
+            val json = inputStream.bufferedReader().use { it.readText() }
+            val jsonObject = JSONObject(json)
+
+            mainFragment.setCities(jsonObject.getJSONArray("cities"))
+
+            val fragmentManager = supportFragmentManager
+            fragmentManager.beginTransaction()
+                .add(R.id.fragment_container, mainFragment)
+                .add(R.id.fragment_container, detailFragment)
+                .commit()
+
+            updateCityData(jsonObject.getJSONObject("city_data"))
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    fun updateCityData(cityData: JSONObject) {
+        val cityName = cityData.getString("city_name")
+        detailFragment.setCityData(cityName)
     }
 
     override fun updateCityName(newCityName: String) {

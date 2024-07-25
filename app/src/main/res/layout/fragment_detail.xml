@@ -11,9 +11,23 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/city_edittext"
+        android:id="@+id/city_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone" />
+
+    <!-- Add this TextView -->
+    <TextView
+        android:id="@+id/temperature_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
+
+    <!-- Add another TextView for humidity -->
+    <TextView
+        android:id="@+id/humidity_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
 
 </LinearLayout>
