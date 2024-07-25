@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Weather Latam</string>
+
+    <string name="min_temp">Min: %s</string>
+    <string name="max_temp">Max: %s</string>
+    <string name="pressure">Pressure: %s</string>
+    <string name="humidity">Humidity: %s</string>
+    <string name="wind_speed">Wind speed: %s</string>
+    <string name="sunrise">Sunrise: %s</string>
+    <string name="sunset">Sunset: %s</string>
+    <string name="unit">Unidades</string>
+    <string name="unit_description">Selecciona el tipo de unidad</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
+
+    <!--Settings-->
+    <string name="settings_temperature_unit">settings_temperature_unit</string>
+    <string name="btn_save">guardar</string>
+    <string name="cancel">cancelar</string>
+
+</resources>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow_background">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        android:src="@drawable/settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/city_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="8dp"
+        android:textColor="@color/font_default"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_settings"
+        tools:text="Eyjafjallajökull, Iceland" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/current_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textColor="@color/font_default"
+        android:textSize="122sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_name"
+        tools:text="21\u00B0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/minimum_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/font_default"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/maximum_temp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_temp"
+        tools:text="Min: -1\u00B0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/maximum_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/font_default"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/minimum_temp"
+        app:layout_constraintTop_toBottomOf="@+id/current_temp"
+        tools:text="Max: 32\u00B0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48sp"
+        android:layout_marginEnd="48sp"
+        android:textColor="@color/font_default"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minimum_temp"
+        tools:text="P: 1015 mmHg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/humidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48sp"
+        android:textColor="@color/font_default"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pressure"
+        tools:text="H: 64" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/wind_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48sp"
+        android:textColor="@color/font_default"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidity"
+        tools:text="WS: 6.2 m/s" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sunrise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/font_default"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wind_speed"
+        tools:text="6:04" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sunset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:textColor="@color/font_default"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wind_speed"
+        tools:text="18:04" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sunrise_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/font_default"
+        app:layout_constraintEnd_toEndOf="@+id/sunrise"
+        app:layout_constraintStart_toStartOf="@+id/sunrise"
+        app:layout_constraintTop_toBottomOf="@+id/sunrise"
+        tools:text="sunrise" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sunset_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/font_default"
+        app:layout_constraintEnd_toEndOf="@+id/sunset"
+        app:layout_constraintStart_toStartOf="@+id/sunset"
+        app:layout_constraintTop_toBottomOf="@+id/sunset"
+        tools:text="sunset" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
